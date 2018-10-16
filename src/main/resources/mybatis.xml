@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <setting name="mapUnderscoreToCamelCase" value="true" />
+    </settings>
+    <!--
+    <mappers>
+        <mapper resource="mapper/job/ScheduleJobDao.xml"/>
+        <mapper resource="mapper/job/ScheduleJobLogDao.xml"/>
+
+        <mapper resource="mapper/oss/SysOssDao.xml"/>
+
+        <mapper resource="mapper/sys/SysConfigDao.xml"/>
+        <mapper resource="mapper/sys/SysDeptDao.xml"/>
+        <mapper resource="mapper/sys/SysLogDao.xml"/>
+        <mapper resource="mapper/sys/SysMenuDao.xml"/>
+        <mapper resource="mapper/sys/SysRoleDao.xml"/>
+        <mapper resource="mapper/sys/SysRoleDeptDao.xml"/>
+        <mapper resource="mapper/sys/SysRoleDeptDao.xml"/>
+        <mapper resource="mapper/sys/SysRoleMenuDao.xml"/>
+        <mapper resource="mapper/sys/SysUserDao.xml"/>
+        <mapper resource="mapper/sys/SysUserRoleDao.xml"/>
+        <mapper resource="mapper/sys/SysUserTokenDao.xml"/>
+    </mappers>
+    -->
+</configuration>
