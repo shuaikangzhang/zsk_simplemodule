@@ -71,8 +71,12 @@ public class ImageUtil {
                 e.printStackTrace();
             } finally {
                 try {
-                    if(fis != null) fis.close();
-                    if(iis != null) iis.close();
+                    if(fis != null) {
+                        fis.close();
+                    }
+                    if(iis != null) {
+                        iis.close();
+                    }
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
@@ -91,13 +95,19 @@ public class ImageUtil {
         if(destImg.exists()){
             String p = destImg.getPath();
             try {
-                if(!destImg.isDirectory()) p = destImg.getParent();
-                if(!p.endsWith(File.separator)) p = p + File.separator;
+                if(!destImg.isDirectory()) {
+                    p = destImg.getParent();
+                }
+                if(!p.endsWith(File.separator)) {
+                    p = p + File.separator;
+                }
                 cutImage(srcImg, new FileOutputStream(p + DEFAULT_CUT_PREVFIX + "_" + new java.util.Date().getTime() + "_" + srcImg.getName()), rect);
             } catch (FileNotFoundException e) {
                 log.warn("the dest image is not exist.");
             }
-        }else log.warn("the dest image folder is not exist.");
+        }else {
+            log.warn("the dest image folder is not exist.");
+        }
     }
 
     public void cutImage(File srcImg, String destImg, int x, int y, int width, int height){
@@ -165,8 +175,12 @@ public class ImageUtil {
     public void thumbnailImage(File srcImg, int w, int h, String prevfix, boolean force){
         String p = srcImg.getAbsolutePath();
         try {
-            if(!srcImg.isDirectory()) p = srcImg.getParent();
-            if(!p.endsWith(File.separator)) p = p + File.separator;
+            if(!srcImg.isDirectory()) {
+                p = srcImg.getParent();
+            }
+            if(!p.endsWith(File.separator)) {
+                p = p + File.separator;
+            }
             thumbnailImage(srcImg, new FileOutputStream(p + prevfix +srcImg.getName()), w, h, prevfix, force);
         } catch (FileNotFoundException e) {
             log.error("the dest image is not exist.",e);

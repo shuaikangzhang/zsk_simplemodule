@@ -142,8 +142,9 @@ public class HttpRequestUtils {
             byte[] b = new byte[1024];
             int len;
             InputStream inStream = new FileInputStream(filePath);
-            while ((len = inStream.read(b)) > 0)
+            while ((len = inStream.read(b)) > 0) {
                 response.getOutputStream().write(b, 0, len);
+            }
             inStream.close();
         } catch (Exception e) {
             e.printStackTrace();

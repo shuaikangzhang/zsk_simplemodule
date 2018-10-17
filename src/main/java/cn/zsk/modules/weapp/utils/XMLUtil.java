@@ -221,24 +221,27 @@ public class XMLUtil {
         String jsonstr = convertXmlToJson(xml);
         jsonstr = jsonstr.replace("\"qtyList\":{", "\"qtyList\":[");
         while(true) {
-            if(jsonstr.indexOf("\"qty\":") >= 0)
+            if(jsonstr.indexOf("\"qty\":") >= 0) {
                 jsonstr = jsonstr.replace("\"qty\":", "");
-            else
+            } else {
                 break;
+            }
         }
         jsonstr = jsonstr.replace("},\"tradeList\":{", "],\"tradeList\":[");
         while(true) {
-            if(jsonstr.indexOf("\"trade\":") >= 0)
+            if(jsonstr.indexOf("\"trade\":") >= 0) {
                 jsonstr = jsonstr.replace("\"trade\":", "");
-            else
+            } else {
                 break;
+            }
         }
         jsonstr = jsonstr.replace("},\"list\":{", "],\"list\":[");
         while(true) {
-            if(jsonstr.indexOf("\"couponInfo\":") >= 0)
+            if(jsonstr.indexOf("\"couponInfo\":") >= 0) {
                 jsonstr = jsonstr.replace("\"couponInfo\":", "");
-            else
+            } else {
                 break;
+            }
         }
         jsonstr = jsonstr.replace("}}}}", "}]}}");
         System.out.println(jsonstr);

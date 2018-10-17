@@ -685,8 +685,9 @@ public class DateUtils {
     }
 
     public static int getDayofYear(int year) {
-        if (isLeapYear(year))
+        if (isLeapYear(year)) {
             return 366;
+        }
         return 365;
     }
 
@@ -741,8 +742,9 @@ public class DateUtils {
     public static Date getMondayOfThisWeek() {
         Calendar c = Calendar.getInstance();
         int day_of_week = c.get(Calendar.DAY_OF_WEEK) - 1;
-        if (day_of_week == 0)
+        if (day_of_week == 0) {
             day_of_week = 7;
+        }
         c.add(Calendar.DATE, -day_of_week + 1);
         return c.getTime();
     }
@@ -765,8 +767,9 @@ public class DateUtils {
         int minutes = cal.get(Calendar.MINUTE);
         int seconds = cal.get(Calendar.SECOND);
 
-        if (year > 2020)
+        if (year > 2020) {
             TIME_ROOT = 2020;
+        }
 
         for (int i = TIME_ROOT; i < year; i++) {
             day += getDayofYear(i);

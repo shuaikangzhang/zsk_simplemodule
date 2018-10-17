@@ -23,10 +23,11 @@ public class WeBankR extends HashMap<String, Object> {
 	
 	public static WeBankR status(boolean isSuccess, String errorCode, String errorDesc) {
 		WeBankR r = new WeBankR();
-		if (!isSuccess)
-			r.put("isSuccess", "N");
-		else
-			r.put("isSuccess", "Y");
+		if (!isSuccess) {
+            r.put("isSuccess", "N");
+        } else {
+            r.put("isSuccess", "Y");
+        }
 		r.put("errorCode", errorCode);
 		r.put("errorDesc", errorDesc);
 		return r;
